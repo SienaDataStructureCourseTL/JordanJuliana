@@ -1,10 +1,10 @@
 import java.util.Random;
 
-/**
+/*
  *  A class representing a square matrix with some methods to manipulate
  *  such matrices.
  *  
- * @author Jim Teresco, modified by Prof. White and (your names here)
+ * @author Jim Teresco, modified by Prof. White, Jordan Breen, and Juliana Goehner 
  * @version Fall 2019
  */
 public class Matrix2D 
@@ -103,9 +103,18 @@ public class Matrix2D
      */
     public int maxValue()
     {
-        //add your code here
-        
-        return -1;
+        int maxVal = data[0][0];
+        for(int row = 0; row < data.length; row++)
+        {
+            for(int col = 0; col < data.length; col++)
+            {
+                if(data[row][col] > maxVal)
+                {
+                    maxVal = data[row][col];
+                }
+            }
+        }
+        return maxVal;
     }
     
     /**
@@ -148,10 +157,24 @@ public class Matrix2D
         if (data.length != other.data.length) {
             throw new Matrix2DSizeMismatchException(data.length, other.data.length);
         }
-
-        //add your code here
         
-        return null;
+        Matrix2D sum = new Matrix2D(data.length);
+        for(int row = 0; row < data.length; row++)
+        {
+            for(int col = 0; col < data.length; col++)
+            {
+                try
+                {
+                    sum.set(row, col, (other.get(row, col)) + (get(row, col)));
+                }
+                catch(Matrix2DIndexOutOfBoundsException ex)
+                {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        
+        return sum;
     }
 
     /**
