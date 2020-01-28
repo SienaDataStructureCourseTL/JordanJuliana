@@ -2,12 +2,12 @@
 /**
  * Git collaboration example for CSIS 210
  *
- * @author Jim Teresco, modified by group members:
+ * @author Jim Teresco, modified by group members: 
  * 
  * 1) replace with one group member's name
  *
  *
- * 2) replace with another group member's name
+ * 2) Juliana Goehner
  *
  *
  * 3) 3rd member if a group of 3 only
@@ -26,6 +26,8 @@ public class Collaborate
         System.out.println("And another modifies after this...");
         
         System.out.println("git will save you from a copy and paste disaster.");
+        
+        System.out.println("Data Structures is a great class");
         
     }
 }
