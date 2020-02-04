@@ -32,15 +32,15 @@ public class DriverMatrix2D
         System.out.println("4x4 matrix a after a[2][2] is set to 0");
         System.out.println(a);
         
-/*
+
         // try to get a value out of range
-        try {
+        /*try {
             double x = a.get(7, 2);
         }
         catch (Exception e) {
             System.err.println(e);
         }*/
-/*
+
         Matrix2D ident = new Matrix2D(3);
         ident.setToIdentity();
         System.out.println("3x3 identity matrix");
@@ -59,7 +59,7 @@ public class DriverMatrix2D
 
         ident.set(2, 0, 9);
         System.out.println("\nChecking max, expecting true:  " + (9 == ident.maxValue()));
-        */
+        
         Matrix2D b = new Matrix2D(4);
         b.randomInit(-100, 100);
         System.out.println("\n4x4 matrix b after random initialization -100 to 100");
@@ -68,10 +68,9 @@ public class DriverMatrix2D
         Matrix2D c = a.add(b);
         System.out.println("4x4 matrix c = a + b; expected output must be nmanually verified");
         System.out.println(c);
-/*
+
         // Finally, we'll try a mismatched size add and not catch the exception. 
         // This should generate a runtime error.
         Matrix2D d = c.add(ident); 
-        */
     }
 }
