@@ -134,7 +134,21 @@ public class Matrix2D
             return false;
         }
 
-        //add your code here
+        for (int row = 0; row < data.length; row++)
+        {
+            for (int col = 0; col < data.length; col++)
+            {
+                try
+                {
+                    if( get(row,col) != otr.get(row,col) )    // If any of the same indexes of the copared Matrix2D objects contain different value from each other
+                    return false;                               // The Matrix2D objects are not equal, return false
+                }
+                catch(Matrix2DIndexOutOfBoundsException ex)
+                {
+                    ex.printStackTrace();
+                }
+            }
+        }
 
         return true;
     }
@@ -184,7 +198,20 @@ public class Matrix2D
      */
     public void scale(int by)
     {
-        //add your code here
+        for(int row = 0; row < data.length; row++)
+        {
+            for(int col = 0; col < data.length; col++)
+            {
+                try
+                {
+                    set(row, col, by * get(row, col));
+                }
+                catch(Matrix2DIndexOutOfBoundsException ex)
+                {
+                    ex.printStackTrace();
+                }
+            }
+        }
     }
 
     /**
