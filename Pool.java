@@ -71,7 +71,14 @@ public class Pool
     {
         int count = 0;
 
-        //add your code here
+        for (int hour = 0; hour < HOURS; hour++)
+        {
+            for (int day = 1; day <= DAYS; day++)
+            {
+                if(luckyDay[hour][day] == null)
+                count++;
+            }
+        }
         
         return count;
     }
@@ -105,7 +112,14 @@ public class Pool
     {
         double total = 0.0;
 
-        //add your code here
+        for (int hour = 0; hour < HOURS; hour++)
+        {
+            for (int day = 1; day <= DAYS; day++)
+            {
+                if(luckyDay[hour][day] != null)
+                total += luckyDay[hour][day].getAmount();
+            }
+        }
         
         return total;
     }
